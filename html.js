@@ -23,6 +23,14 @@ function updateUI() {
     guestScoreEl.textContent = guestScore;
 }
 
+// Helper function to enable or disable score buttons
+function setScoreButtonsEnabled(enabled) {
+    const scoreButtons = document.querySelectorAll(".score-buttons button");
+    scoreButtons.forEach(button => {
+        button.disabled = !enabled;
+    });
+}
+
 function incrementHome(points) {
     homeScore += points;
     playScoreSound();
@@ -44,18 +52,21 @@ function resetScore() {
 function resetAll() {
     resetScore();
     resetTimer();
+    setScoreButtonsEnabled(false);
 }
 
 function startGame() {
     // Start the timer without resetting scores or timer if already running
     if (!timerInterval) {
         startTimer();
+        setScoreButtonsEnabled(true);
     }
 }
 
 function newGame() {
     resetAll();
     startTimer();
+    setScoreButtonsEnabled(true);
 }
 
 // Game Timer Logic
@@ -98,6 +109,8 @@ function togglePauseResume() {
     isPaused = !isPaused;
     document.getElementById("pause-resume-btn").textContent = isPaused ? "Resume" : "Pause";
 }
+
+setScoreButtonsEnabled(false); // Disable score buttons initially
 
 // Start initial display
 updateTimerDisplay();
