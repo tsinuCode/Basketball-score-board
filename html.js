@@ -47,18 +47,16 @@ function resetAll() {
 }
 
 function startGame() {
+    // Start the timer without resetting scores or timer if already running
+    if (!timerInterval) {
+        startTimer();
+    }
+}
+
+function newGame() {
     resetAll();
     startTimer();
 }
-
-// Score buttons
-document.getElementById("home-plus-1").addEventListener("click", () => incrementHome(1));
-document.getElementById("home-plus-2").addEventListener("click", () => incrementHome(2));
-document.getElementById("home-plus-3").addEventListener("click", () => incrementHome(3));
-
-document.getElementById("guest-plus-1").addEventListener("click", () => incrementGuest(1));
-document.getElementById("guest-plus-2").addEventListener("click", () => incrementGuest(2));
-document.getElementById("guest-plus-3").addEventListener("click", () => incrementGuest(3));
 
 // Game Timer Logic
 let gameTime = 60; // seconds
@@ -82,6 +80,7 @@ function startTimer() {
             if (gameTime === 0) {
                 playBuzzer();
                 clearInterval(timerInterval);
+                timerInterval = null;
             }
         }
     }, 1000);
@@ -89,6 +88,7 @@ function startTimer() {
 
 function resetTimer() {
     clearInterval(timerInterval);
+    timerInterval = null;
     gameTime = 60;
     updateTimerDisplay();
     isPaused = false;
@@ -102,8 +102,3 @@ function togglePauseResume() {
 // Start initial display
 updateTimerDisplay();
 updateUI();
-
-// Control Buttons
-document.getElementById("start-btn").addEventListener("click", startGame);
-document.getElementById("reset-btn").addEventListener("click", resetAll);
-document.getElementById("pause-resume-btn").addEventListener("click", togglePauseResume);

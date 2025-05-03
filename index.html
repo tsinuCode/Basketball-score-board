@@ -25,9 +25,9 @@
           <div class="team-name">Home</div>
           <div class="score-display" id="home-score">0</div>
           <div class="score-buttons">
-            <button onclick="incrementHome(1)">+1</button>
-            <button onclick="incrementHome(2)">+2</button>
-            <button onclick="incrementHome(3)">+3</button>
+            <button id="home-plus-1" onclick="incrementHome(1)">+1</button>
+            <button id="home-plus-2" onclick="incrementHome(2)">+2</button>
+            <button id="home-plus-3" onclick="incrementHome(3)">+3</button>
           </div>
         </div>
 
@@ -36,9 +36,9 @@
           <div class="team-name">Guest</div>
           <div class="score-display" id="guest-score">0</div>
           <div class="score-buttons">
-            <button onclick="incrementGuest(1)">+1</button>
-            <button onclick="incrementGuest(2)">+2</button>
-            <button onclick="incrementGuest(3)">+3</button>
+            <button id="guest-plus-1" onclick="incrementGuest(1)">+1</button>
+            <button id="guest-plus-2" onclick="incrementGuest(2)">+2</button>
+            <button id="guest-plus-3" onclick="incrementGuest(3)">+3</button>
           </div>
         </div>
       </div>
@@ -66,9 +66,9 @@
     <!-- Bottom Control Section -->
     <div id="bottomClass" class="BottomSection">
       <button id="start-btn" onclick="startGame()">Start</button>
-      <button id="pause-resume-btn" onclick="pauseGame()">Pause</button>
-      <button id="reset-btn" onclick="resetGame()">Reset</button>
-      <button  onclick="newGame()">New Game</button>
+      <button id="pause-resume-btn" onclick="togglePauseResume()">Pause</button>
+      <button id="reset-btn" onclick="resetAll()">Reset</button>
+      <button id="newgame-btn" onclick="newGame()">New Game</button>
     </div>
 
   </div>
@@ -76,7 +76,3 @@
   <script src="html.js"></script>                       
 </body>
 </html>
-
-
-
-
