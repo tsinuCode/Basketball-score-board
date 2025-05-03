@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="html.css" />
+  <title>Basketball Scoreboard</title>
+</head>
+<body>
+  <div class="scoreboard">
+
+    <!-- Header Section -->
+    <header>
+      <h1 id="head-el">Basketball Scoreboard</h1>
+      <p id="par-el">Keep track of your game live!</p>
+    </header>
+
+    <!-- Main Grid: Scores, Timer, Info -->
+    <div class="main-grid">
+      
+      <!-- Score Area -->
+      <div id="ScoreArea" class="Score-area">
+        <!-- Home Team -->
+        <div class="team-box">
+          <div class="team-name">Home</div>
+          <div class="score-display" id="home-score">0</div>
+          <div class="score-buttons">
+            <button onclick="incrementHome(1)">+1</button>
+            <button onclick="incrementHome(2)">+2</button>
+            <button onclick="incrementHome(3)">+3</button>
+          </div>
+        </div>
+
+        <!-- Guest Team -->
+        <div class="team-box">
+          <div class="team-name">Guest</div>
+          <div class="score-display" id="guest-score">0</div>
+          <div class="score-buttons">
+            <button onclick="incrementGuest(1)">+1</button>
+            <button onclick="incrementGuest(2)">+2</button>
+            <button onclick="incrementGuest(3)">+3</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Game Timer -->
+      <div id="gameTimer" class="timer">12:00</div>
+
+      <!-- Game Info -->
+      <div id="gameInfo" class="GameInfoBar">
+        <div class="info-box">
+          <div class="info-title">Quarter</div>
+          <div class="info-value" id="quarter">1</div>
+        </div>
+        <div class="info-box">
+          <div class="info-title">Possession</div>
+          <div class="info-value" id="possession">Home</div>
+        </div>
+        <div class="info-box">
+          <div class="info-title">Fouls</div>
+          <div class="info-value" id="fouls">Home: 0 | Guest: 0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Control Section -->
+    <div id="bottomClass" class="BottomSection">
+      <button id="start-btn" onclick="startGame()">Start</button>
+      <button id="pause-resume-btn" onclick="pauseGame()">Pause</button>
+      <button id="reset-btn" onclick="resetGame()">Reset</button>
+      <button  onclick="newGame()">New Game</button>
+    </div>
+
+  </div>
+
+  <script src="html.js"></script>                       
+</body>
+</html>
+
+
+
+

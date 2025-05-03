@@ -1,0 +1,192 @@
+/* Base Layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(145deg, #0f172a, #1e293b);
+    color: #f1f5f9;
+    min-height: 100vh;
+  }
+  
+  .scoreboard {
+    max-width: 960px;
+    margin: auto;
+    padding: 2rem 1rem;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    color: #38bdf8;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    color: #94a3b8;
+  }
+  
+  /* Score Area */
+  .Score-area {
+    display: flex;
+    justify-content: space-around;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .team-box {
+    flex: 1;
+    min-width: 250px;
+    background: #0f172a;
+    box-shadow: 0 0 10px #0ea5e9;
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+  
+  .team-box:hover {
+    transform: translateY(-4px);
+  }
+  
+  .team-name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #facc15;
+  }
+  
+  /* Team score display */
+  #home-score {
+    background: #1d4ed8;
+    color: white;
+    font-size: 3.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+  }
+  
+  #guest-score {
+    background: #dc2626;
+    color: white;
+    font-size: 3.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .score-buttons button {
+    margin: 0.3rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    background: #22c55e;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.15s ease;
+  }
+  
+  .score-buttons button:hover {
+    background: #16a34a;
+    color: white;
+  }
+  
+  .score-buttons button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Timer */
+  .timer {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 1.5rem 0;
+    color: #38bdf8;
+    background: #1e293b;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    display: inline-block;
+  }
+  
+  /* Info Section */
+  .GameInfoBar {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .info-box {
+    background: #1e293b;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 120px;
+    color: #fbbf24;
+    font-weight: bold;
+    box-shadow: 0 0 6px #475569;
+  }
+  
+  /* Bottom Section */
+  .BottomSection {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  
+  .BottomSection button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #3b82f6;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.15s ease;
+  }
+  
+  .BottomSection button:hover {
+    background-color: #2563eb;
+  }
+  
+  .BottomSection button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 600px) {
+    .team-box {
+      min-width: 100%;
+    }
+  
+    .score-buttons button,
+    .BottomSection button {
+      font-size: 0.85rem;
+      padding: 0.4rem 0.8rem;
+    }
+  
+    .timer {
+      font-size: 1.8rem;
+    }
+  
+    #home-score,
+    #guest-score {
+      font-size: 2.5rem;
+    }
+  
+    header h1 {
+      font-size: 1.8rem;
+    }
+  
+    header p {
+      font-size: 1rem;
+    }
+  }
+  
